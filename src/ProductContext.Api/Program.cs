@@ -7,12 +7,13 @@ using ProductContext.Infra.Data;
 using ProductContext.Infra.Data.Repositories;
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Identity.Client;
+// using Microsoft.Identity.Client;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ProductContext.Api;
 using ProductContext.Api.Auth;
 using ProductContext.Domain.Interfaces.Repositories;
+using Microsoft.EntityFrameworkCore.Design;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -95,6 +96,8 @@ void ConfigureServices(IServiceCollection services)
 
     services.AddScoped<IPasswordHashService, PasswordHashService>();
     services.AddScoped<TokenService>();
+
+	// services.AddDbContext<ProductDbContext>();
 }
 
 void ConfigureApi(WebApplicationBuilder builder)
@@ -107,9 +110,9 @@ void ConfigureApi(WebApplicationBuilder builder)
 
 void ConfigureDbContext(WebApplicationBuilder builder)
 {
-    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    // var connectionString = builder.Configuration.GetConnectionString("PsqlConnection");
 
-    builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(connectionString));
+    builder.Services.AddDbContext<ProductDbContext>();
 }
 
 void ConfigureAuthentication(WebApplicationBuilder builder)
@@ -135,5 +138,5 @@ void LoadConfiguration(WebApplicationBuilder builder)
 {
     var configuration = builder.Configuration;
 
-    Configuration.JwtKey = configuration.GetValue<string>("JwtKey") ?? throw new InvalidOperationException("JwtKey não foi configurada corretamente.");
+    Configuration.JwtKey = configuration.GetValue<string>("JwtKey") ?? throw new InvalidOperationException("JwtKey nï¿½o foi configurada corretamente.");
 }

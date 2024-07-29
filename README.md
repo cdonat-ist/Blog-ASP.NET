@@ -53,9 +53,9 @@ Apply all migration on Database
 dotnet-ef database update
 ```
 
-> To populate your database (Seed):
+<!-- > To populate your database (Seed):
 >
-> run the file [`seed.sql`](src/Infrastructure/Database/Seed/seed.sql).
+> run the file [`seed.sql`](src/Infrastructure/Database/Seed/seed.sql). -->
 
 Run project:
 

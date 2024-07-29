@@ -17,46 +17,46 @@ namespace ProductContext.Infra.Data.Mappings
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Id)
-                .HasColumnName("Id")
-                .HasColumnType("uniqueidentifier");
+            // builder.Property(x => x.Id)
+            //     .HasColumnName("Id")
+            //     .HasColumnType("uniqueidentifier");
 
-            builder.Property(x => x.Name)
-                 .IsRequired()
-                 .HasColumnName("Name")
-                 .HasColumnType("varchar")
-                 .HasMaxLength(100);
+            // builder.Property(x => x.Name)
+            //      .IsRequired()
+            //      .HasColumnName("Name")
+            //      .HasColumnType("varchar")
+            //      .HasMaxLength(100);
 
-            builder.Property(x => x.Description)
-                .IsRequired()
-                .HasColumnName("Description")
-                .HasColumnType("varchar")
-                .HasMaxLength(200);
+            // builder.Property(x => x.Description)
+            //     .IsRequired()
+            //     .HasColumnName("Description")
+            //     .HasColumnType("varchar")
+            //     .HasMaxLength(200);
 
-            builder.Property(x => x.Price)
-                .IsRequired()
-                .HasColumnName("Price")
-                .HasColumnType("decimal(18,2)");
+            // builder.Property(x => x.Price)
+            //     .IsRequired()
+            //     .HasColumnName("Price")
+            //     .HasColumnType("decimal(18,2)");
 
-            builder.Property(x => x.Quantity)
-                .IsRequired()
-                .HasColumnName("Quantity")
-                .HasColumnType("int");
+            // builder.Property(x => x.Quantity)
+            //     .IsRequired()
+            //     .HasColumnName("Quantity")
+            //     .HasColumnType("int");
 
-            builder.Property(x => x.IsActive)
-                .IsRequired()
-                .HasColumnName("IsActive")
-                .HasColumnType("bit");
+            // builder.Property(x => x.IsActive)
+            //     .IsRequired()
+            //     .HasColumnName("IsActive")
+            //     .HasColumnType("bit");
 
-            builder.Property(x => x.CreateDate)
-                .IsRequired()
-                .HasColumnName("CreateDate")
-                .HasColumnType("datetime");
+            // builder.Property(x => x.CreateDate)
+            //     .IsRequired()
+            //     .HasColumnName("CreateDate")
+            //     .HasColumnType("datetime");
 
-            builder.Property(x => x.LastUpdateDate)
-                .IsRequired()
-                .HasColumnName("LastUpdateDate")
-                .HasColumnType("datetime");
+            // builder.Property(x => x.LastUpdateDate)
+            //     .IsRequired()
+            //     .HasColumnName("LastUpdateDate")
+            //     .HasColumnType("datetime");
         }
     }
 }
