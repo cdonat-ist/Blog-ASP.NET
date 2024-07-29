@@ -1,0 +1,17 @@
+name: boilerplate_cs_psql-backend
+
+services:
+
+  app:
+    container_name: ${COMPOSE_PROJECT_NAME}
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - 5263:5263
+    deploy:
+      resources:
+        # aws lightsail container (nano)
+        limits:
+          cpus: '0.25'
+          memory: '512MB'
